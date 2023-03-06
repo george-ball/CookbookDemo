@@ -1,0 +1,13 @@
+# add credit and subtract debit
+---
+transaction: { accountNumber: 34343434, entry: DEBIT, amount: 100 }
+...
+---
+transaction: { accountNumber: 34343434, entry: DEBIT, amount: 50 }
+...
+---
+transaction: { accountNumber: 45454545, entry: CREDIT, amount: 10 }
+...
+---
+transaction: { accountNumber: 99999999, entry: CREDIT, amount: 1000 }
+...

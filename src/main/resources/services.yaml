@@ -1,0 +1,28 @@
+!ChronicleServicesCfg {
+    queues: {
+        transactionIn: { path: target/data/transactionIn, sourceId: 1 },
+        transactionOut: { path: target/data/transactionOut, sourceId: 2 },
+        transactionDummy: { path: target/data/transactionDummy, sourceId: 100 },
+    },
+
+    services: {
+        transactionSvc: {
+            inputs: [ transactionIn ],
+            output: transactionOut,
+            implClass: !type software.chronicle.services.cookbook.example4a.services.TransactionSvcImpl,
+        },
+
+      # An upstream service and a downstream service.
+      # No input queue for the upstream, and a dummy queue for downstream (we can't have an empty output)
+        transactionUpstream: {
+            inputs: [ ],
+            output: transactionIn,
+            implClass: !type software.chronicle.services.cookbook.example4a.services.TransactionSvcUpstream,
+        },
+        transactionDownstream: {
+            inputs: [transactionOut],
+            output: transactionDummy,
+            implClass: !type software.chronicle.services.cookbook.example4a.services.TransactionSvcDownstream,
+        }
+    }
+}

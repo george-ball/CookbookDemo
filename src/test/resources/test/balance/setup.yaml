@@ -1,0 +1,14 @@
+---
+accounts: [
+    !Account {
+        name: "currentAccount",
+        accountNumber: 34343434,
+        balance: 100.0
+    },
+    !Account {
+        name: "savingsAccount",
+        accountNumber: 45454545,
+        balance: 200.0
+    }
+]
+...

@@ -1,0 +1,35 @@
+# add credit and subtract debit
+---
+onTransaction: {
+    accountNumber: 34343434,
+    amount: 100.0,
+    entry: DEBIT,
+    success: true,
+    reason: Balance of account 34343434 now 0.0
+}
+...
+---
+onTransaction: {
+    accountNumber: 34343434,
+    amount: 50.0,
+    entry: DEBIT,
+    success: false,
+    reason: Insufficient funds 0.0 available for 50.0
+}
+...
+---
+onTransaction: {
+    accountNumber: 45454545,
+    amount: 10.0,
+    entry: CREDIT,
+    success: true,
+    reason: Balance of account 45454545 now 210.0
+}
+...
+---
+accountError: {
+    accountNumber: 99999999,
+    errorMessage: Unknown Account Number,
+    priority: MEDIUM
+}
+...
